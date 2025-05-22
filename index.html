@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ site.title }}</title>
   <style>
     body {
@@ -15,30 +15,48 @@
       padding: 0 20px;
       line-height: 1.6;
     }
-    img.profile {
-      width: 200px;
+
+    .profile-container {
+      float: left;
+      margin-right: 20px;
+      text-align: center;
+      width: 200px; /* Fix width for the floated block */
+    }
+
+    .profile-container img {
+      width: 100%;
       border-radius: 10px;
       display: block;
-      margin: 0 auto 20px;
+      margin-bottom: 10px;
     }
-    h1 {
-      text-align: center;
+
+    .profile-container h1 {
+      margin: 0;
+      font-size: 24px;
     }
-    p {
-      font-size: 18px;
+
+    .content {
+      overflow: hidden; /* Clear float */
     }
   </style>
 </head>
 <body>
-  <img src="profile.jpg" alt="Profile picture" class="profile" />
-  <h1>{{ site.title }}</h1>
-  <p>{{ site.description }}</p>
 
-  <p>
-    Hi, my name is Itai Panasoff. I'm a (hopefully-soon) PhD student at the Technion.<br> 
-    I'm currently finishing my M.Sc. in the Technion Autonomous Systems program, where I studied the use of lattices as deterministic sample sets. <br>
-    The work done has ended up producing a (hopefully!) interesting paper, which has been accepted to RSS2025: <br>
-    <a href="https://arxiv.org/pdf/2502.04908">Effective Sampling for Robot Motion Planning Through the Lens of Lattices</a>
-  </p>
+  <div class="profile-container">
+    <img src="profile.jpg" alt="Profile picture" />
+    <h1>{{ site.title }}</h1>
+  </div>
+
+  <div class="content">
+    <p>{{ site.description }}</p>
+
+    <p>
+      Hi, my name is Itai Panasoff. I'm a (hopefully-soon) PhD student at the Technion.<br> 
+      I'm currently finishing my M.Sc. in the Technion Autonomous Systems program, where I studied the use of lattices as deterministic sample sets. <br>
+      The work done has ended up producing a (hopefully!) interesting paper, which has been accepted to RSS2025: <br><br>
+      <a href="https://arxiv.org/pdf/2502.04908">Effective Sampling for Robot Motion Planning Through the Lens of Lattices</a>
+    </p>
+  </div>
+
 </body>
 </html>
